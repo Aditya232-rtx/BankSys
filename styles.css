@@ -1,0 +1,122 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+}
+
+.btn {
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 8px 16px;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+.table td, .table th {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+#balanceResult {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.alert {
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#refreshAccounts, #refreshTransactions {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .table td, .table th {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card-header h5 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation for status messages */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#statusMessage {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
