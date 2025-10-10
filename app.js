@@ -146,7 +146,7 @@ async function handleTransaction(event) {
         
         if (data.status === 'success') {
             const action = transactionType === 'deposit' ? 'deposited to' : 'withdrawn from';
-            showStatus(`Successfully ${action} account #${accountNumber}. New balance: $${data.new_balance.toFixed(2)}`, 'success');
+            showStatus(`Successfully ${action} account #${accountNumber}. New balance: ₹${data.new_balance.toFixed(2)}`, 'success');
             transactionForm.reset();
             loadAccounts();
             loadTransactions();
@@ -196,7 +196,7 @@ function updateBalanceDisplay(accountNumber, balance) {
     balanceResult.innerHTML = `
         <div class="text-center">
             <div class="text-muted small">Account #${accountNumber}</div>
-            <div class="display-6 fw-bold text-primary">$${balance.toFixed(2)}</div>
+            <div class="display-6 fw-bold text-primary">₹${balance.toFixed(2)}</div>
             <div class="text-muted small">Current Balance</div>
         </div>
     `;
@@ -241,7 +241,7 @@ function updateAccountsTable(accounts) {
             <td>${account.account_number}</td>
             <td>${account.customer_name || 'N/A'}</td>
             <td class="fw-bold ${account.balance >= 0 ? 'text-success' : 'text-danger'}">
-                $${Math.abs(account.balance).toFixed(2)} ${account.balance < 0 ? '(Overdrawn)' : ''}
+                ₹${Math.abs(account.balance).toFixed(2)} ${account.balance < 0 ? '(Overdrawn)' : ''}
             </td>
         </tr>
     `).join('');
@@ -298,7 +298,7 @@ function getTransactionClass(type) {
 
 function formatTransactionAmount(type, amount) {
     const prefix = type === 'Withdrawal' ? '-' : '+';
-    return `${prefix}$${amount.toFixed(2)}`;
+    return `${prefix}₹${amount.toFixed(2)}`;
 }
 
 // Format date for display
